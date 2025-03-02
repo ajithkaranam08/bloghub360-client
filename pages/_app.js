@@ -13,6 +13,7 @@ import '../public/assets/css/main.css'
 import '../public/assets/css/slick.css'
 import '../public/assets/css/spacing.css'
 import '../public/assets/css/swiper-bundle.css'
+import '../public/assets/css/global.css';
 import { Provider } from 'react-redux';
 import store from '../store/index';
 
