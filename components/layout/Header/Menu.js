@@ -34,8 +34,8 @@ export default function Menu({ handleMobileMenuOpen, handleSidebarOpen, offCanva
             <div className="tgmenu__wrap">
                 <nav className="tgmenu__nav">
                     <div className="logo d-block d-lg-none">
-                        <Link href="/" className="logo-dark"><img src="/assets/img/logo/logo.png" alt="Logo" /></Link>
-                        <Link href="/" className="logo-light"><img src="/assets/img/logo/w_logo.png" alt="Logo" /></Link>
+                        <Link href="/" className="logo-dark">BH 360</Link>
+                        <Link href="/" className="logo-light">BH 360</Link>
                     </div>
                     {logoAlt &&
                         <div className="d-flex gap-4 align-items-center">
@@ -43,7 +43,7 @@ export default function Menu({ handleMobileMenuOpen, handleSidebarOpen, offCanva
                                 <Link href="#"><i className="flaticon-menu-bar" /></Link>
                             </div>
                             <div className="logo">
-                                <Link href="/"><img src={`assets/img/logo/${white ? "w_logo" : "logo"}.png`} alt="Logo" /></Link>
+                                <Link href="/" className='fs-6'>BH 360</Link>
                             </div>
                         </div>
                     }

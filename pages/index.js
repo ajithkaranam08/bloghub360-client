@@ -1,5 +1,5 @@
 import Layout from '@/components/layout/Layout';
-import NftSlider from '@/components/slider/NftSlider';
+import MainPageSlider from '@/components/slider/MainPageSlider';
 import PopularSlider from '@/components/slider/PopularSlider';
 import TrendingSlider from '@/components/slider/TrendingSlider';
 import data from '@/util/blogData';
@@ -18,7 +18,7 @@ export default function Home() {
         >
           <div className="container">
             <div className="slider-active">
-              <NftSlider />
+              <MainPageSlider />
             </div>
             <div className="slider__marquee clearfix">
               <div className="marquee_mode">

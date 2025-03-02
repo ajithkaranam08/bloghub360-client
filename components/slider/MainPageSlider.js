@@ -3,7 +3,7 @@ import data from '@/util/blogData';
 import Link from 'next/link';
 import { Autoplay, Navigation, Pagination } from 'swiper';
 
-export default function NftSlider() {
+export default function MainPageSlider() {
   return (
     <>
       <Swiper
