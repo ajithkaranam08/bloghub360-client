@@ -1,8 +1,9 @@
 import Menu from './Menu';
 import MobileMenu from './MobileMenu';
 import Sidebar from './Sidebar';
+import { useSelector } from "react-redux";
 
-export default function Header5({
+export default function Header({
   scroll,
   handleMobileMenuOpen,
   handleMobileMenuClose,
@@ -11,6 +12,7 @@ export default function Header5({
   handleSidebarClose,
   handleSidebarOpen,
 }) {
+  const userData = useSelector((state) => state.auth)
   return (
     <>
       <header className="header__style-two header__style-three header__style-five">
@@ -62,15 +64,10 @@ export default function Header5({
                       <a href="#">About</a>
                     </li>
                     <li>
-                      <a href="#">Contacts</a>
+                      <a href="#">Contact Us</a>
                     </li>
                     <li>
                       <a href="#">Advertise</a>
-                    </li>
-                    <li className="buy-theme">
-                      <a href="#">
-                        Buy theme <span>$19</span>
-                      </a>
                     </li>
                   </ul>
                 </div>
@@ -93,21 +90,15 @@ export default function Header5({
                         <i className="fab fa-behance" />
                       </a>
                     </li>
-                    <li>
-                      <a href="#">
-                        <i className="fab fa-linkedin-in" />
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <i className="fab fa-youtube" />
-                      </a>
-                    </li>
+                   
                   </ul>
-                  <a href="#" className="sign-in">
-                    <i className="fas fa-user" /> Sign in
-                  </a>
+                  {userData?.isAdmin === true && 
+                      <a href="">
+                        ADMIN DASHBOARD
+                      </a>
+                    }
                 </div>
+
               </div>
             </div>
           </div>

@@ -8,10 +8,9 @@ import { useState } from 'react';
 import Marquee from 'react-fast-marquee';
 import ModalVideo from 'react-modal-video';
 
-export default function Home5() {
+export default function Home() {
   const [isOpen, setOpen] = useState(false);
   return (
-    <>
       <Layout footerClass="footer-style-three footer-bg">
         <section
           className="slider__area slider__style-two fix"
@@ -291,6 +290,5 @@ export default function Home5() {
           </div>
         </section>
       </Layout>
-    </>
   );
 }

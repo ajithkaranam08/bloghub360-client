@@ -20,7 +20,7 @@ export default function ThemeSwitch() {
             >
                 <span className="switcher__btn light-mode"><i className="flaticon-sun" /></span>
                 <span className="switcher__mode" />
-                <span className="switcher__btn dark-mode"><i className="flaticon-moon" /></span>
+                <span className="switcher__btn dark-mode"><i className="flaticon-moon fs-6" /></span>
             </nav>
         </>
     )

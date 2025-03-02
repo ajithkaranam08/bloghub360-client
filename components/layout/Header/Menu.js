@@ -1,7 +1,10 @@
+import { logout } from '@/store/slices/authSlice'
+import { LogOut, LogOutIcon } from 'lucide-react'
 import dynamic from 'next/dynamic'
 import Link from "next/link"
 import { useRouter } from "next/router"
 import { useState } from "react"
+import { useDispatch, useSelector } from 'react-redux'
 const ThemeSwitch = dynamic(() => import('@/components/elements/ThemeSwitch'), {
     ssr: false
 })
@@ -10,7 +13,22 @@ export default function Menu({ handleMobileMenuOpen, handleSidebarOpen, offCanva
     const router = useRouter()
     const [searchToggle, setSearchToggle] = useState(false)
     const searchHandle = () => setSearchToggle(!searchToggle)
-
+    const userData = useSelector((state) => state.auth)
+    const dispatch = useDispatch()
+    const handleLogout = () => {
+        dispatch(
+            logout({
+                isAuthenticated: false,
+                username: "",
+                email: "",
+                isAdmin: false,
+            })
+        )
+        router.push("/");
+        setTimeout(() => {
+            window.location.reload(); // Force page reload after navigation
+        }, 0);
+    }
     return (
         <>
             <div className="tgmenu__wrap">
@@ -48,7 +66,7 @@ export default function Menu({ handleMobileMenuOpen, handleSidebarOpen, offCanva
                                     <li className={router.pathname == "/index-8" ? "active" : ""}><Link href="/index-8">Home Minimal</Link></li>
                                 </ul>
                             </li>
-                            <li className={router.pathname == "/lifestyle" ? "active" : ""}><Link href="/lifestyle">Lifestyle</Link></li>
+                            <li className={router.pathname == "/category/lifestyle" ? "active" : ""}><Link href="/category/lifestyle">Lifestyle</Link></li>
                             <li className={router.pathname == "/travel" ? "active" : ""}><Link href="/travel">Travel</Link></li>
                             <li className="menu-item-has-children"><Link href="#">Post Type</Link>
                                 <ul className="sub-menu">
@@ -64,8 +82,11 @@ export default function Menu({ handleMobileMenuOpen, handleSidebarOpen, offCanva
                             <li className="mode-switcher">
                                 <ThemeSwitch />
                             </li>
-                            <li className="user"><Link href="#"><i className="far fa-user" /></Link></li>
-                            <li className="header-cart"><Link href="#"><i className="far fa-shopping-basket" /></Link></li>
+                            {userData?.isAuthenticated ? <li className="user text-black hover:text-pink-500 cursor-pointer fs-[1rem]">
+                                <Link href="/" onClick={handleLogout}>
+                                    <LogOut />
+                                </Link>
+                            </li> : <li className="user"><Link href="/login"><i className="far fa-user" /></Link></li>}
                             <li className="header-search"><Link href="#"><i className={`${searchToggle ? "far fa-search fa-times" : "far fa-search"} `} onClick={searchHandle} /></Link>
                                 <div className="header__style-two">
                                     <div className={`header__top-search ${searchToggle ? "d-block" : "d-none"}`}>

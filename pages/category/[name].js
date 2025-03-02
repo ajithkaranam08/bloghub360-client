@@ -1,11 +1,14 @@
 import BlogSidebar from "@/components/elements/BlogSidebar"
 import Layout from "@/components/layout/Layout"
 import Link from "next/link"
+import { useRouter } from "next/router";
 
-export default function Lifestyle() {
+export default function Nft() {
+    const router = useRouter();
+    const { category } = router.query;
     return (
         <>
-            <Layout breadcrumbCategory="Category" breadcrumbPostTitle="Lifestyle">
+            <Layout breadcrumbCategory="Category" breadcrumbPostTitle={category}>
                 <section className="blog-details-area pt-80 pb-100">
                     <div className="container">
                         <div className="row justify-content-center">
@@ -24,7 +27,7 @@ export default function Lifestyle() {
                                 <div className="blog-post-wrapper">
                                     <div className="latest__post-item">
                                         <div className="latest__post-thumb tgImage__hover">
-                                            <Link href="/blog/1"><img src="/assets/img/lifestyle/life_style07.jpg" alt="img" /></Link>
+                                            <Link href="/blog/1"><img src="/assets/img/nft/nft_blog01.jpg" alt="img" /></Link>
                                         </div>
                                         <div className="latest__post-content">
                                             <ul className="tgbanner__content-meta list-wrap">
@@ -41,7 +44,7 @@ export default function Lifestyle() {
                                     </div>
                                     <div className="latest__post-item">
                                         <div className="latest__post-thumb tgImage__hover">
-                                            <Link href="/blog/1"><img src="/assets/img/lifestyle/life_style08.jpg" alt="img" /></Link>
+                                            <Link href="/blog/1"><img src="/assets/img/nft/nft_blog02.jpg" alt="img" /></Link>
                                         </div>
                                         <div className="latest__post-content">
                                             <ul className="tgbanner__content-meta list-wrap">
@@ -58,7 +61,7 @@ export default function Lifestyle() {
                                     </div>
                                     <div className="latest__post-item">
                                         <div className="latest__post-thumb tgImage__hover">
-                                            <Link href="/blog/1"><img src="/assets/img/lifestyle/life_style09.jpg" alt="img" /></Link>
+                                            <Link href="/blog/1"><img src="/assets/img/nft/nft_blog03.jpg" alt="img" /></Link>
                                         </div>
                                         <div className="latest__post-content">
                                             <ul className="tgbanner__content-meta list-wrap">
@@ -75,7 +78,7 @@ export default function Lifestyle() {
                                     </div>
                                     <div className="latest__post-item">
                                         <div className="latest__post-thumb tgImage__hover">
-                                            <Link href="/blog/1"><img src="/assets/img/lifestyle/life_style10.jpg" alt="img" /></Link>
+                                            <Link href="/blog/1"><img src="/assets/img/nft/nft_blog04.jpg" alt="img" /></Link>
                                         </div>
                                         <div className="latest__post-content">
                                             <ul className="tgbanner__content-meta list-wrap">
@@ -92,7 +95,7 @@ export default function Lifestyle() {
                                     </div>
                                     <div className="latest__post-item">
                                         <div className="latest__post-thumb tgImage__hover">
-                                            <Link href="/blog/1"><img src="/assets/img/lifestyle/life_style11.jpg" alt="img" /></Link>
+                                            <Link href="/blog/1"><img src="/assets/img/nft/nft_blog05.jpg" alt="img" /></Link>
                                         </div>
                                         <div className="latest__post-content">
                                             <ul className="tgbanner__content-meta list-wrap">
