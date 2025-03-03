@@ -8,11 +8,11 @@ import data from '../../util/blogData';
 export default function BlogDetails() {
   let Router = useRouter();
   const [item, setItem] = useState(null);
-  const { id } = Router.query;
+  const { blog } = Router.query;
 
   useEffect(() => {
-    setItem(data.find((data) => data.id == id));
-  }, [id]);
+    setItem(data.find((data) => data.id == blog));
+  }, [blog]);
 
   return (
     <>

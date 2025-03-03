@@ -1,12 +1,14 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-
-const storedAuth = typeof window !== "undefined" ? JSON.parse(localStorage.getItem("auth")) : null;
+const storedAuth =
+  typeof window !== 'undefined'
+    ? JSON.parse(localStorage.getItem('auth'))
+    : null;
 
 const initialState = storedAuth || {
   isAuthenticated: false,
-  username: "",
-  email: "",
+  username: '',
+  email: '',
   isAdmin: false,
 };
 
@@ -19,14 +21,15 @@ const authSlice = createSlice({
       state.email = action.payload.email;
       state.username = action.payload.username;
       state.isAdmin = action.payload.isAdmin;
-      localStorage.setItem("auth", JSON.stringify(state));
+      localStorage.setItem('auth', JSON.stringify(state));
     },
     logout: (state) => {
       state.isAuthenticated = false;
       state.username = null;
       state.email = null;
       state.user = false;
-      localStorage.removeItem("auth");
+      state.isAdmin = false;
+      localStorage.removeItem('auth');
     },
   },
 });

@@ -1,7 +1,7 @@
 import Menu from './Menu';
 import MobileMenu from './MobileMenu';
 import Sidebar from './Sidebar';
-import { useSelector } from "react-redux";
+import { useSelector } from 'react-redux';
 
 export default function Header({
   scroll,
@@ -12,7 +12,7 @@ export default function Header({
   handleSidebarClose,
   handleSidebarOpen,
 }) {
-  const userData = useSelector((state) => state.auth)
+  const userData = useSelector((state) => state.auth);
   return (
     <>
       <header className="header__style-two header__style-three header__style-five">
@@ -90,15 +90,11 @@ export default function Header({
                         <i className="fab fa-behance" />
                       </a>
                     </li>
-                   
                   </ul>
-                  {userData?.isAdmin === true && 
-                      <a href="">
-                        ADMIN DASHBOARD
-                      </a>
-                    }
+                  {userData?.isAdmin === true && (
+                    <a href="/admin/dashboard">ADMIN DASHBOARD</a>
+                  )}
                 </div>
-
               </div>
             </div>
           </div>
